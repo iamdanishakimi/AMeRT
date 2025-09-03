@@ -206,7 +206,7 @@ $stats['total_points'] = $result->fetch_assoc()['total_points'] ?? 0;
     </header>
 
     <main class="space-y-8">
-        <?php if (isset($_SESSION['message'])): ?>
+        <?php if (isset($_SESSION['message']) &&  $_SESSION['message']): ?>
             <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></span>
             </div>

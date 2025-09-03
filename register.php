@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_admin'])) {
         <div class="bg-white p-6 rounded-xl shadow-lg">
             <h2 class="text-2xl font-bold text-blue-800 mb-6 border-b pb-2">Create Admin Account</h2>
             
-            <?php if (isset($_SESSION['message'])): ?>
+            <?php if (isset($_SESSION['message']) &&  $_SESSION['message']): ?>
                 <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-6" role="alert">
                     <span class="block sm:inline"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></span>
                 </div>

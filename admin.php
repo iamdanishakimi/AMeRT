@@ -392,7 +392,7 @@ while ($row = $result->fetch_assoc())
 
     <!-- [Rest of the content remains unchanged] -->
 	    <main class="space-y-8">
-        <?php if (isset($_SESSION['message'])): ?>
+        <?php if (isset($_SESSION['message']) &&  $_SESSION['message']): ?>
             <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></span>
             </div>
@@ -664,7 +664,7 @@ while ($row = $result->fetch_assoc())
                             <td class="py-2 px-4">
                                 <div class="flex space-x-2">
                                     <!-- Edit Button -->
-									<button onclick="openEditProductModal(<?php echo $product['type_id']; ?>', '<?php echo $product['type_name']; ?>', '<?php echo $product['price_per_kg']; ?>')" class="btn-yellow text-white font-bold py-1 px-3 rounded text-sm">Edit</button>
+									<button onclick="openEditProductModal(<?php echo $product['type_id']; ?>, '<?php echo $product['type_name']; ?>', '<?php echo $product['price_per_kg']; ?>')" class="btn-yellow text-white font-bold py-1 px-3 rounded text-sm">Edit</button>
                                     
                                     <!-- Delete Form -->
                                     <form method="POST" onsubmit="return confirm('Are you sure you want to delete this product?');">
