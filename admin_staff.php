@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['verify_payment']))
     $transaction_id = $connect->real_escape_string($_POST['transaction_id']);
     
     // Update transaction status to paid
-    $sql = "UPDATE recycling_transactions SET status = 'paid', verified_by = {$_SESSION['staff_id']}, verified_at = NOW() WHERE transaction_id = $transaction_id";
+    $sql = "UPDATE recycling_transactions SET status = 'paid', verified_by = {$_SESSION['staff_id']},verified_at = NOW() WHERE transaction_id = $transaction_id";
     
     if ($connect->query($sql)) 
 	{
@@ -155,7 +155,7 @@ function getTransactionItems($transaction_id) {
     </header>
 
     <main class="space-y-8">
-        <?php if (isset($_SESSION['message'])): ?>
+         <?php if (isset($_SESSION['message']) &&  $_SESSION['message']): ?>
             <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></span>
             </div>
