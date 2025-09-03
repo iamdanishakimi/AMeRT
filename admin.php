@@ -664,7 +664,7 @@ while ($row = $result->fetch_assoc())
                             <td class="py-2 px-4">
                                 <div class="flex space-x-2">
                                     <!-- Edit Button -->
-									<button onclick="openEditProductModal(<?php echo $product['type_id']; ?>', '<?php echo $product['type_name']; ?>', '<?php echo $product['price_per_kg']; ?>')" class="btn-yellow text-white font-bold py-1 px-3 rounded text-sm">Edit</button>
+									<button onclick="openEditProductModal(<?php echo $product['type_id']; ?>, '<?php echo $product['type_name']; ?>', '<?php echo $product['price_per_kg']; ?>')" class="btn-yellow text-white font-bold py-1 px-3 rounded text-sm">Edit</button>
                                     
                                     <!-- Delete Form -->
                                     <form method="POST" onsubmit="return confirm('Are you sure you want to delete this product?');">
